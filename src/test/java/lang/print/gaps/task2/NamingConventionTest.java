@@ -18,10 +18,10 @@ class NamingConventionTest {
         List<String> strings = Files.readAllLines(path);
         List<String> result = strings.stream()
                 .filter(line ->
-                                line.contains("variable ") ||
-                                line.contains("variable_one") ||
+                                line.contains("variable") ||
+                                line.contains("variableOne") ||
                                 line.contains("variableTwo") ||
-                                line.contains("variable_three") ||
+                                line.contains("variableThree") ||
                                 line.contains("VARIABLE_FOUR") ||
                                 line.contains("VARIABLE_FIVE") ||
                                 line.contains("variableSix") ||
@@ -29,7 +29,7 @@ class NamingConventionTest {
                                 line.contains("variableEight"))
                 .collect(Collectors.toList());
 
-        assertEquals(5, result.size(), "You should follow the case that is used for variable name:" +
+        assertEquals(9, result.size(), "You should follow the case that is used for variable name:" +
                 " if in the snippet you see snake case -> in the solution you must follow it.");
     }
 }
